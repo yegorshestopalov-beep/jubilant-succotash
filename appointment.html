@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Запись на приём — Стоматология «Колибри»</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===== ШАПКА САЙТА ===== -->
+<header class="header">
+  <a href="index.html" class="logo">
+        <img src="img/logo.jpg" alt="Логотип Колибри">
+        <span>Колибри</span>
+    </a>
+    <nav class="nav">
+        <a href="index.html">Главная</a>
+        <a href="services.html">Услуги</a>
+        <a href="doctors.html">Врачи</a>
+        <a href="prices.html">Цены</a>
+        <a href="contacts.html">Контакты</a>
+        <a href="appointment.html">Запись</a>
+        <a href="feedback.html">Обратная связь</a>
+    </nav>
+</header>
+
+<!-- ===== ОСНОВНОЙ КОНТЕНТ ===== -->
+<main class="main">
+    <h1>Запись на приём</h1>
+    <p class="page-subtitle">Заполните форму — мы перезвоним и подтвердим время приёма</p>
+
+    <div class="appointment-grid">
+
+        <!-- Блок: форма онлайн-записи -->
+        <!-- Атрибут action убран, чтобы браузер не знал, куда отправлять данные -->
+        <form class="form" method="post" onsubmit="return validateAndSubmit(event)">
+            <h2>Форма записи</h2>
+
+            <label>ФИО:</label>
+            <input type="text" name="name" placeholder="Иванов Иван Иванович" required>
+
+            <label>Телефон:</label>
+            <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" required>
+
+            <label>Услуга:</label>
+            <select name="service" required>
+                <option value="">Выберите услугу</option>
+                <option>Терапия</option>
+            <option>Ортодонтия</option>
+            <option>Имплантация</option>
+            <option>Детская стоматология</option>
+            </select>
+
+            <div class="form-row">
+                <div>
+                    <label>Дата:</label>
+                    <input type="date" name="date" required>
+                </div>
+                <div>
+                    <label>Время:</label>
+                    <input type="time" name="time" required>
+                </div>
+            </div>
+
+            <button type="submit" class="btn">Записаться на приём</button>
+            <p class="form-hint">Нажимая кнопку, вы соглашаетесь на обработку персональных данных</p>
+        </form>
+
+        <!-- Блок: полезная информация -->
+        <aside class="appointment-info">
+            <div class="info-card">
+                <h3>Как проходит запись</h3>
+                <ol class="steps-list">
+                    <li>Вы заполняете форму на сайте</li>
+                    <li>Администратор перезванивает в течение 15 минут</li>
+                    <li>Мы подтверждаем дату и время приёма</li>
+                    <li>Вы приходите в клинику в назначенное время</li>
+                </ol>
+            </div>
+
+            <div class="info-card accent">
+                <h3>Нужна срочная помощь?</h3>
+                <p>Позвоните нам напрямую — мы подберём ближайшее свободное время.</p>
+                <p class="phone">+7 (8453) 00-00-00</p>
+                <p class="work-time">Пн–Пт, с 8:00 до 17:00</p>
+            </div>
+
+            <div class="info-card">
+                <h3>Почему это удобно</h3>
+                <ul class="benefits-list">
+                    <li>Без звонков и ожидания на линии</li>
+                    <li>Запись доступна круглосуточно</li>
+                    <li>Выбираете удобные дату и время</li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+</main>
+
+<!-- ===== ПОДВАЛ САЙТА ===== -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-col">
+            <h3>Колибри</h3>
+            <p>Стоматологическая клиника для взрослых и детей. Заботимся о здоровье ваших зубов с 2015 года.</p>
+        </div>
+        <div class="footer-col">
+            <h3>Контакты</h3>
+            <p><a href="tel:+78453000000">+7 (8453) 00-00-00</a></p>
+            <p><a href="mailto:info@kollibri.ru">info@kollibri.ru</a></p>
+            <p>г. Энгельс, ул. Степная, д. 35</p>
+        </div>
+        <div class="footer-col">
+            <h3>График работы</h3>
+            <p>Пн–Пт: 8:00 – 17:00</p>
+            <p>Сб–Вс: выходной</p>
+        </div>
+        <div class="footer-col">
+            <h3>Разделы</h3>
+            <p><a href="index.html">Главная</a></p>
+            <p><a href="services.html">Услуги</a></p>
+            <p><a href="doctors.html">Врачи</a></p>
+            <p><a href="appointment.html">Запись</a></p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 Стоматология «Колибри». Все права защищены.</p>
+    </div>
+</footer>
+
+<!-- Скрипт для проверки и имитации отправки -->
+<script>
+function validateAndSubmit(event) {
+    // Получаем значения полей
+    const phone = document.querySelector('input[name="phone"]').value.trim();
+    const name = document.querySelector('input[name="name"]').value.trim();
+    const service = document.querySelector('select[name="service"]').value;
+    const date = document.querySelector('input[name="date"]').value;
+    const time = document.querySelector('input[name="time"]').value;
+
+    // Регулярное выражение для строгой проверки российского номера
+    const phonePattern = /^(\+7|8)?[\s\-]?$?\d{3}$?[\s\-]?\d{3}[\s\-]?\d{2}[\s\-]?\d{2}$/;
+
+    // Проверяем телефон
+    if (!phonePattern.test(phone)) {
+        alert('Пожалуйста, введите корректный номер телефона (например: +7 (999) 123-45-67)');
+        event.preventDefault(); 
+        return false;
+    }
+
+    // Проверяем, что все обязательные поля заполнены
+    if (!name || !service || !date || !time) {
+        alert('Пожалуйста, заполните все поля формы.');
+        event.preventDefault();
+        return false;
+    }
+
+    // Имитация отправки данных
+    alert('Заявка успешно отправлена! Администратор свяжется с вами в течение 15 минут.');
+
+    // Очистка всех полей формы после успешной "отправки"
+    event.target.reset();
+
+    // ГЛАВНАЯ СТРОКА: она окончательно блокирует любое действие браузера по умолчанию
+    event.preventDefault();
+    return false;
+}
+</script>
+
+</body>
+</html>

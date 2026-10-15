@@ -1,0 +1,971 @@
+/* =========================================================
+   ОБЩИЕ СТИЛИ ДЛЯ ВСЕХ СТРАНИЦ
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --green-main: #7FB77E;
+    --green-light: #B1D7B4;
+    --green-pale: #F7F6DC;
+    --green-dark: #4E7C4A;
+    --white: #FFFFFF;
+    --gray: #555555;
+    --shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: var(--green-pale);
+    color: var(--gray);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== ШАПКА САЙТА ===== */
+.header {
+    background: linear-gradient(135deg, var(--green-main), var(--green-dark));
+    padding: 18px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+}
+
+.nav {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 16px;
+    padding: 6px 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.nav a:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+/* ===== ЛОГОТИП ===== */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--white);
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.logo img {
+    height: 75px;
+    width: auto;
+    display: block;
+}
+
+.logo:hover {
+    opacity: 0.85;
+}
+
+/* ===== ОСНОВНОЙ КОНТЕНТ ===== */
+.main {
+    flex: 1;
+    width: 100%;
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 40px;
+    background-color: var(--white);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+h1 {
+    color: var(--green-dark);
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h2 {
+    color: var(--green-dark);
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.page-subtitle {
+    text-align: center;
+    font-size: 17px;
+    color: var(--gray);
+    margin-bottom: 35px;
+}
+
+/* ===== КНОПКА ===== */
+.btn {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--green-main), var(--green-dark));
+    color: var(--white);
+    padding: 14px 32px;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(78,124,74,0.3);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(78,124,74,0.4);
+}
+
+.btn-small {
+    margin-top: 18px;
+    padding: 10px 24px;
+    font-size: 15px;
+    border-radius: 25px;
+}
+
+/* =========================================================
+   ПОДВАЛ САЙТА
+   ========================================================= */
+
+.footer {
+    background-color: var(--green-dark);
+    color: var(--white);
+    padding: 45px 60px 20px;
+    width: 100%;
+    margin-top: auto;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 35px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.footer-col h3 {
+    color: var(--green-light);
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.footer-col p {
+    font-size: 15px;
+    margin-bottom: 8px;
+    color: var(--white);
+    opacity: 0.9;
+}
+
+.footer-col a {
+    color: var(--white);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-col a:hover {
+    color: var(--green-light);
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.2);
+    margin-top: 35px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* ===== УНИВЕРСАЛЬНЫЙ БЛОК ФОТО ===== */
+.photo-block {
+    width: 100%;
+    height: 400px;
+    background-color: var(--green-light);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 20px;
+    margin: 25px 0;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.photo-block img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photo-small {
+    height: 300px;
+    opacity: 0.9;
+    transition: 0.3s;
+}
+
+.photo-small:hover {
+    opacity: 1;
+}
+
+/* =========================================================
+   ГЛАВНАЯ СТРАНИЦА
+   ========================================================= */
+
+.advantages {
+    list-style: none;
+    margin: 25px 0;
+    text-align: center;
+}
+
+.advantages li {
+    display: inline-block;
+    margin: 10px 20px;
+    font-size: 18px;
+    color: var(--green-dark);
+}
+
+.advantages li::before {
+    content: "✔ ";
+    color: var(--green-main);
+    font-weight: bold;
+}
+
+/* ===== ГАЛЕРЕЯ ФОТО ===== */
+.gallery {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    margin: 25px 0;
+}
+
+.gallery-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease;
+}
+
+.gallery-track img {
+    min-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(78, 124, 74, 0.7);
+    color: var(--white);
+    border: none;
+    font-size: 24px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 10;
+}
+
+.gallery-btn:hover {
+    background-color: var(--green-dark);
+}
+
+.gallery-prev { left: 15px; }
+.gallery-next { right: 15px; }
+
+.gallery-dots {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.gallery-dots span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.gallery-dots span.active {
+    background-color: var(--green-main);
+    transform: scale(1.2);
+}
+
+/* =========================================================
+   СТРАНИЦА «УСЛУГИ»
+   ========================================================= */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.service-card {
+    background: linear-gradient(135deg, var(--green-pale), var(--white));
+    border-left: 5px solid var(--green-main);
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(127,183,126,0.3);
+}
+
+.service-icon {
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+.service-card h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 15px;
+    flex-grow: 1;
+}
+
+.service-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--green-dark);
+    margin: 15px 0 10px;
+}
+
+/* ===== Блок «Как мы работаем» ===== */
+.section-title {
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 25px;
+    font-size: 24px;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.step-card {
+    background: linear-gradient(135deg, var(--green-pale), var(--white));
+    border-radius: 15px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: 0.3s;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(127,183,126,0.3);
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--green-main), var(--green-dark));
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 auto 15px;
+}
+
+.step-card h3 {
+    color: var(--green-dark);
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.step-card p {
+    font-size: 15px;
+}
+
+/* =========================================================
+   СТРАНИЦА «ВРАЧИ»
+   ========================================================= */
+
+.doctors-subtitle {
+    text-align: center;
+    font-size: 17px;
+    color: var(--gray);
+    margin-bottom: 35px;
+}
+
+.doctors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 35px;
+    margin-top: 20px;
+}
+
+.doctor-card {
+    background: linear-gradient(180deg, var(--white), var(--green-pale));
+    border: 2px solid var(--green-light);
+    border-radius: 20px;
+    padding: 35px 25px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.doctor-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(127,183,126,0.35);
+    border-color: var(--green-main);
+}
+
+.doctor-photo {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background-color: var(--green-light);
+    margin: 0 auto 25px;
+    overflow: hidden;
+    border: 6px solid var(--green-pale);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    display: block;
+    padding: 0;
+}
+
+.doctor-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border-radius: 50%;
+}
+
+.doctor-card h2 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: var(--green-dark);
+}
+
+.doctor-card p {
+    margin: 6px 0;
+    font-size: 16px;
+    color: var(--gray);
+}
+
+.clinic-title {
+    text-align: center;
+    margin-top: 60px;
+    color: var(--green-dark);
+    font-size: 22px;
+}
+
+/* ===== Блок «Почему выбирают нас» ===== */
+.why-us {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.why-card {
+    background: linear-gradient(135deg, var(--green-pale), var(--white));
+    border-radius: 15px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: 0.3s;
+}
+
+.why-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(127,183,126,0.3);
+}
+
+.why-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.why-card h3 {
+    color: var(--green-dark);
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.why-card p {
+    font-size: 15px;
+    color: var(--gray);
+}
+
+/* ===== Призыв к действию ===== */
+.cta-block {
+    margin-top: 50px;
+    padding: 40px;
+    background: linear-gradient(135deg, var(--green-main), var(--green-dark));
+    border-radius: 15px;
+    text-align: center;
+    color: var(--white);
+    box-shadow: var(--shadow);
+}
+
+.cta-block p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: var(--white);
+}
+
+.cta-block .btn {
+    background: var(--white);
+    color: var(--green-dark);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.cta-block .btn:hover {
+    background: var(--green-pale);
+    color: var(--green-dark);
+}
+
+/* =========================================================
+   СТРАНИЦА «ЦЕНЫ»
+   ========================================================= */
+
+.price-category {
+    margin-top: 35px;
+    margin-bottom: 12px;
+    font-size: 20px;
+    color: var(--green-dark);
+    border-left: 5px solid var(--green-main);
+    padding-left: 12px;
+}
+
+.price-note {
+    margin-top: 25px;
+    font-size: 14px;
+    color: #888;
+    font-style: italic;
+}
+
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    font-size: 16px;
+}
+
+.price-table th {
+    background: linear-gradient(135deg, var(--green-main), var(--green-dark));
+    color: var(--white);
+    padding: 16px 20px;
+    text-align: left;
+    font-size: 17px;
+}
+
+.price-table td {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--green-light);
+}
+
+.price-table tr:nth-child(even) {
+    background-color: var(--green-pale);
+}
+
+.price-table tr:hover {
+    background-color: var(--green-light);
+    transition: 0.2s;
+}
+
+.price-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* =========================================================
+   СТРАНИЦА «КОНТАКТЫ»
+   ========================================================= */
+
+.contacts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.contact-info,
+.schedule {
+    background: linear-gradient(135deg, var(--green-pale), var(--white));
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.contact-info {
+    border-left: 5px solid var(--green-main);
+}
+
+.contact-info p {
+    margin: 12px 0;
+    font-size: 16px;
+}
+
+.contact-info a {
+    color: var(--green-dark);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.schedule-list {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.schedule-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--green-light);
+    font-size: 16px;
+}
+
+.schedule-list li:last-child {
+    border-bottom: none;
+}
+
+.schedule-list li.weekend {
+    color: #b85c5c;
+}
+
+/* ===== Карта проезда ===== */
+.map-block {
+    background: linear-gradient(135deg, var(--green-pale), var(--white));
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    margin-bottom: 30px;
+}
+
+.map-container {
+    width: 100%;
+    height: 550px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    margin-top: 20px;
+    border: 4px solid var(--green-light);
+    background-color: var(--green-pale);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+.map-hint {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 16px;
+    color: var(--green-dark);
+    font-weight: 500;
+}
+
+/* =========================================================
+   ФОРМЫ (ЗАПИСЬ, ОБРАТНАЯ СВЯЗЬ.
+   ========================================================= */
+
+.form {
+    display: flex;
+    flex-direction: column;
+    max-width: 550px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, var(--green-pale), var(--white));
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.form label {
+    margin-top: 15px;
+    color: var(--green-dark);
+    font-weight: bold;
+}
+
+.form input,
+.form select,
+.form textarea {
+    padding: 12px;
+    border: 1px solid var(--green-light);
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: inherit;
+    margin-top: 5px;
+    transition: 0.3s;
+}
+
+.form textarea {
+    resize: vertical;
+}
+
+.form input:focus,
+.form select:focus,
+.form textarea:focus {
+    outline: none;
+    border-color: var(--green-main);
+    box-shadow: 0 0 5px rgba(127,183,126,0.5);
+}
+
+.form .btn {
+    margin-top: 25px;
+}
+
+.login-form {
+    max-width: 400px;
+}
+
+/* ===== СТРАНИЦА «ЗАПИСЬ НА ПРИЁМ» ===== */
+
+.appointment-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 35px;
+    align-items: start;
+}
+
+.appointment-grid .form {
+    max-width: 100%;
+    margin: 0;
+}
+
+.form h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.form-hint {
+    font-size: 13px;
+    color: #888;
+    text-align: center;
+    margin-top: 12px;
+}
+
+.appointment-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-card {
+    background: linear-gradient(135deg, var(--green-pale), var(--white));
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: var(--shadow);
+    border-left: 5px solid var(--green-main);
+}
+
+.info-card h3 {
+    color: var(--green-dark);
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.info-card p {
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.info-card.accent {
+    background: linear-gradient(135deg, var(--green-main), var(--green-dark));
+    color: var(--white);
+    border-left: none;
+}
+
+.info-card.accent h3,
+.info-card.accent p {
+    color: var(--white);
+}
+
+.info-card.accent .phone {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.info-card.accent .work-time {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.steps-list {
+    padding-left: 20px;
+}
+
+.steps-list li {
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+.benefits-list {
+    list-style: none;
+}
+
+.benefits-list li {
+    padding-left: 22px;
+    position: relative;
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+.benefits-list li::before {
+    content: "✔";
+    color: var(--green-main);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* =========================================================
+   АДАПТИВ
+   ========================================================= */
+
+@media (max-width: 900px) {
+    .contacts-grid {
+        grid-template-columns: 1fr;
+    }
+    .map-container {
+        height: 400px;
+    }
+    .appointment-grid {
+        grid-template-columns: 1fr;
+    }
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .footer {
+        padding: 35px 25px 20px;
+    }
+}
+/* ===== МОДАЛЬНОЕ ОКНО ПОДТВЕРЖДЕНИЯ ЗАПИСИ ===== */
+
+/* Затемненный фон */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+}
+
+/* Само окно */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1001;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Заголовок окна */
+.modal h2 {
+    color: #4E7C4A;
+    margin-top: 0;
+    font-size: 24px;
+}
+
+/* Текст */
+.modal p {
+    color: #555555;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+/* Кнопка закрытия */
+.modal-close-btn {
+    background: #4E7C4A;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.modal-close-btn:hover {
+    background: #3d623a;
+}
